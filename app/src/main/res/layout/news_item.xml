@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/newsItemView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp">
+
+    <ImageView
+        android:id="@+id/newsImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="10dp"
+        android:paddingStart="8dp"
+        android:contentDescription="News Image" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/newsTitle"
+        android:textColor="@color/black"
+        android:layout_toEndOf="@+id/newsImage"
+        android:textSize="20sp"
+        android:text="News Title"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:paddingEnd="8dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/newsDescription"
+        android:textColor="@color/black"
+        android:layout_toEndOf="@+id/newsImage"
+        android:layout_below="@+id/newsTitle"
+        android:text="News Short Desc"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:paddingEnd="8dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/newsDescription"
+        android:layout_marginTop="10dp"
+        android:background="#DAD8D8"
+        />
+
+</RelativeLayout>
