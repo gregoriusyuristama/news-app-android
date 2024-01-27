@@ -1,4 +1,4 @@
-package com.byicho.mynewsapp.main;
+package com.byicho.mynewsapp.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

@@ -10,6 +10,8 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 
 import com.byicho.mynewsapp.R;
+import com.byicho.mynewsapp.adapter.EnergyNewsAdapter;
+import com.byicho.mynewsapp.adapter.HeadlineNewsAdapter;
 import com.byicho.mynewsapp.databinding.ActivityMainBinding;
 import com.byicho.mynewsapp.utils.EndlessRecyclerViewScrollListener;
 import com.byicho.mynewsapp.viewmodel.MainViewModel;
@@ -46,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void initObserver() {
         viewModel.energyData.observe(this, newsItemModel -> {
-            if (allEnergyNewsAdapter.energyNews.getArticles().size() > 0) {
-                allEnergyNewsAdapter.energyNews.getArticles().addAll(newsItemModel.getArticles());
+            if (allEnergyNewsAdapter.getEnergyNews().getArticles().size() > 0) {
+                allEnergyNewsAdapter.getEnergyNews().getArticles().addAll(newsItemModel.getArticles());
             } else {
                 allEnergyNewsAdapter.setEnergyNews(newsItemModel);
             }
