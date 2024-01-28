@@ -1,11 +1,10 @@
-package com.byicho.mynewsapp.api;
+package com.byicho.mynewsapp.Core.api;
 
-import com.byicho.mynewsapp.model.NewsItemModel;
+import com.byicho.mynewsapp.Features.NewsList.model.NewsItemModel;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface NewsAPI {

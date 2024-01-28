@@ -1,4 +1,4 @@
-package com.byicho.mynewsapp.adapter;
+package com.byicho.mynewsapp.Features.NewsList.view.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,9 +7,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 
 import com.byicho.mynewsapp.R;
-import com.byicho.mynewsapp.model.ArticleModel;
-import com.byicho.mynewsapp.model.NewsItemModel;
-import com.byicho.mynewsapp.ui.HeadlineNewsViewHolder;
+import com.byicho.mynewsapp.Features.NewsList.model.ArticleModel;
+import com.byicho.mynewsapp.Features.NewsList.model.NewsItemModel;
+import com.byicho.mynewsapp.Features.NewsList.view.HeadlineNewsViewHolder;
 import com.github.islamkhsh.CardSliderAdapter;
 import com.squareup.picasso.Picasso;
 
@@ -44,6 +44,7 @@ public class HeadlineNewsAdapter extends CardSliderAdapter<HeadlineNewsViewHolde
         }
         headlineNewsViewHolder.getNewsTitle().setText(headlineNews.getArticles().get(i).getTitle());
         headlineNewsViewHolder.getNewsDesc().setText(headlineNews.getArticles().get(i).getDescription());
+        headlineNewsViewHolder.setNewsUrl(headlineNews.getArticles().get(i).getUrl());
     }
 
     @NonNull

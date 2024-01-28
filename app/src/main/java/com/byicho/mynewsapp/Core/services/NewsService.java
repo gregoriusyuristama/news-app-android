@@ -1,6 +1,6 @@
-package com.byicho.mynewsapp.services;
+package com.byicho.mynewsapp.Core.services;
 
-import com.byicho.mynewsapp.api.NewsAPI;
+import com.byicho.mynewsapp.Core.api.NewsAPI;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

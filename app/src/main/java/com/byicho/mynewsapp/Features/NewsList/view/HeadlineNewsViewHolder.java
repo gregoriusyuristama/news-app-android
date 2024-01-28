@@ -1,5 +1,7 @@
-package com.byicho.mynewsapp.ui;
+package com.byicho.mynewsapp.Features.NewsList.view;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,12 +15,21 @@ public class HeadlineNewsViewHolder extends RecyclerView.ViewHolder {
 
     ImageView newsImage;
     TextView newsTitle, newsDesc;
+    String newsUrl;
 
     public HeadlineNewsViewHolder(@NonNull View itemView) {
         super(itemView);
         newsImage = itemView.findViewById(R.id.headlineImage);
         newsTitle = itemView.findViewById(R.id.headlineTitle);
         newsDesc = itemView.findViewById(R.id.headlineDesc);
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(newsUrl));
+                browserIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                view.getContext().startActivity(browserIntent);
+            }
+        });
     }
 
     public ImageView getNewsImage() {
@@ -33,4 +44,7 @@ public class HeadlineNewsViewHolder extends RecyclerView.ViewHolder {
         return newsDesc;
     }
 
+    public void setNewsUrl(String newsUrl) {
+        this.newsUrl = newsUrl;
+    }
 }

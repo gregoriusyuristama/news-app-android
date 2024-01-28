@@ -1,5 +1,7 @@
-package com.byicho.mynewsapp.ui;
+package com.byicho.mynewsapp.Features.NewsList.view;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,6 +14,7 @@ import com.byicho.mynewsapp.R;
 public class EnergyNewsViewHolder extends RecyclerView.ViewHolder {
     ImageView newsImage;
     TextView newsTitle, newsDesc;
+    String newsUrl;
 
 
     public EnergyNewsViewHolder(@NonNull View itemView) {
@@ -19,6 +22,14 @@ public class EnergyNewsViewHolder extends RecyclerView.ViewHolder {
         newsImage = itemView.findViewById(R.id.newsImage);
         newsTitle = itemView.findViewById(R.id.newsTitle);
         newsDesc = itemView.findViewById(R.id.newsDescription);
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(newsUrl));
+                browserIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                view.getContext().startActivity(browserIntent);
+            }
+        });
     }
 
     public ImageView getNewsImage() {
@@ -31,5 +42,9 @@ public class EnergyNewsViewHolder extends RecyclerView.ViewHolder {
 
     public TextView getNewsDesc() {
         return newsDesc;
+    }
+
+    public void setNewsUrl(String newsUrl) {
+        this.newsUrl = newsUrl;
     }
 }

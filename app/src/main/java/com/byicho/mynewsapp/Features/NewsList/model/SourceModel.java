@@ -1,4 +1,4 @@
-package com.byicho.mynewsapp.model;
+package com.byicho.mynewsapp.Features.NewsList.model;
 
 public class SourceModel {
    private String id;

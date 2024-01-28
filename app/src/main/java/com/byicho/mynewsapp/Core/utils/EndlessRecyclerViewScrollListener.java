@@ -1,4 +1,4 @@
-package com.byicho.mynewsapp.utils;
+package com.byicho.mynewsapp.Core.utils;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;

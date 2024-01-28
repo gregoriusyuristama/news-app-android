@@ -1,19 +1,16 @@
-package com.byicho.mynewsapp.adapter;
+package com.byicho.mynewsapp.Features.NewsList.view.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.byicho.mynewsapp.R;
-import com.byicho.mynewsapp.model.ArticleModel;
-import com.byicho.mynewsapp.model.NewsItemModel;
-import com.byicho.mynewsapp.ui.EnergyNewsViewHolder;
-import com.github.islamkhsh.CardSliderAdapter;
+import com.byicho.mynewsapp.Features.NewsList.model.ArticleModel;
+import com.byicho.mynewsapp.Features.NewsList.model.NewsItemModel;
+import com.byicho.mynewsapp.Features.NewsList.view.EnergyNewsViewHolder;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -46,6 +43,7 @@ public class EnergyNewsAdapter extends RecyclerView.Adapter<EnergyNewsViewHolder
                     .centerInside()
                     .into(holder.getNewsImage());
         }
+        holder.setNewsUrl(energyNews.getArticles().get(position).getUrl());
     }
 
     @NonNull
@@ -56,21 +54,7 @@ public class EnergyNewsAdapter extends RecyclerView.Adapter<EnergyNewsViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull EnergyNewsViewHolder holder, int position) {
-        holder.getNewsTitle().setText(energyNews.getArticles().get(position).getTitle());
-        holder.getNewsDesc().setText(energyNews.getArticles().get(position).getDescription());
-        String imageUrl = energyNews.getArticles().get(position).getUrlToImage();
-        if ( imageUrl != null && !imageUrl.isEmpty()) {
-            Picasso.get().load(imageUrl)
-                    .fit()
-                    .centerCrop()
-                    .into(holder.getNewsImage());
-        } else {
-            Picasso.get().load(R.drawable.no_image)
-                    .fit()
-                    .centerInside()
-                    .into(holder.getNewsImage());
-        }
-
+        populateItemRow(holder, position);
     }
     @Override
     public int getItemCount() {

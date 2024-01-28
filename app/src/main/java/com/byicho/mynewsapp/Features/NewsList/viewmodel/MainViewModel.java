@@ -1,11 +1,11 @@
-package com.byicho.mynewsapp.viewmodel;
+package com.byicho.mynewsapp.Features.NewsList.viewmodel;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.byicho.mynewsapp.model.NewsItemModel;
-import com.byicho.mynewsapp.services.NewsService;
+import com.byicho.mynewsapp.Features.NewsList.model.NewsItemModel;
+import com.byicho.mynewsapp.Core.services.NewsService;
 
 import retrofit2.Call;
 import retrofit2.Callback;

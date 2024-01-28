@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".main.MainActivity">
+        tools:context=".Features.NewsList.view.MainActivity">
 
         <!-- AppBar layout for using Toolbar as AppBar -->
         <com.google.android.material.appbar.AppBarLayout
@@ -42,12 +42,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/TextAppearance.AppCompat.Title"
                 android:layout_margin="8dp"
-                android:text="Headline News"/>
+                android:fontFamily="@font/poppins_black"
+                android:text="Headline News"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
             <com.github.islamkhsh.CardSliderViewPager
                 android:id="@+id/allHeadLineNews"
                 android:layout_width="match_parent"
@@ -62,20 +65,27 @@
 
             <com.github.islamkhsh.CardSliderIndicator
                 android:id="@+id/indicator"
+                app:defaultIndicator="@drawable/inactive_dot"
+                app:selectedIndicator="@drawable/selected_dot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="12dp"
                 app:indicatorsToShow="5" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/TextAppearance.AppCompat.Title"
                 android:layout_margin="8dp"
-                android:text="All Energy News"/>
+                android:fontFamily="@font/poppins_black"
+                android:textSize="24dp"
+                android:textColor="@color/black"
+                android:text="All Energy News" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/allEnergyNews"
                 android:layout_weight="1"
+                android:scrollbars="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </LinearLayout>

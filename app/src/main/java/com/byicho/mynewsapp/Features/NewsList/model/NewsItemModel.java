@@ -1,6 +1,5 @@
-package com.byicho.mynewsapp.model;
+package com.byicho.mynewsapp.Features.NewsList.model;
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;

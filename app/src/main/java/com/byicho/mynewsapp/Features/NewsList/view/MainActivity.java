@@ -1,6 +1,7 @@
-package com.byicho.mynewsapp.main;
+package com.byicho.mynewsapp.Features.NewsList.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,11 +11,11 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 
 import com.byicho.mynewsapp.R;
-import com.byicho.mynewsapp.adapter.EnergyNewsAdapter;
-import com.byicho.mynewsapp.adapter.HeadlineNewsAdapter;
+import com.byicho.mynewsapp.Features.NewsList.view.adapter.EnergyNewsAdapter;
+import com.byicho.mynewsapp.Features.NewsList.view.adapter.HeadlineNewsAdapter;
 import com.byicho.mynewsapp.databinding.ActivityMainBinding;
-import com.byicho.mynewsapp.utils.EndlessRecyclerViewScrollListener;
-import com.byicho.mynewsapp.viewmodel.MainViewModel;
+import com.byicho.mynewsapp.Core.utils.EndlessRecyclerViewScrollListener;
+import com.byicho.mynewsapp.Features.NewsList.viewmodel.MainViewModel;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         viewModel = new ViewModelProvider(this).get(MainViewModel.class);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         initProgressBar();
