@@ -28,8 +28,6 @@ public class HeadlineNewsAdapter extends CardSliderAdapter<HeadlineNewsViewHolde
 
     @Override
     public void bindVH(@NonNull HeadlineNewsViewHolder headlineNewsViewHolder, int i) {
-
-        ArticleModel article = headlineNews.getArticles().get(i);
         String imageUrl = headlineNews.getArticles().get(i).getUrlToImage();
         if ( imageUrl != null && !imageUrl.isEmpty()) {
             Picasso.get().load(imageUrl)

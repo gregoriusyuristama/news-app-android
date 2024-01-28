@@ -24,7 +24,6 @@ public class MainViewModel extends ViewModel {
             public void onResponse(@NonNull Call<NewsItemModel> call, @NonNull Response<NewsItemModel> response) {
                 assert response.body() != null;
                 energyData.postValue(response.body());
-//                System.out.println(response.body().toString());
             }
 
             @Override
